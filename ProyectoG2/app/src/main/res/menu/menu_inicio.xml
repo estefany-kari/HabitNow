@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/icHoy"
+        android:title="Hoy"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/icHabitos"
+        android:title="Mis habitos"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/IcCalendario"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="calendario"
+        app:showAsAction="always"/>
+
+
+
+</menu>
