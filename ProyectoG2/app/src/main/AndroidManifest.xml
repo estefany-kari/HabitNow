@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoG2">
+  < proyecto
         <activity android:name=".frecuencia_habito"></activity>
         <activity android:name=".NuevaTarea" />
+        <activity android:name=".estilo_bordeCircular"></activity>
+        <activity android:name=".CuandoQuieresHacerlo" />
+        <activity android:name=".DefinirHabito" />
+  > main
         <activity android:name=".CategoriasHabitos" />
         <activity android:name=".Inicio" />
         <activity android:name=".registrarUsuario" />
