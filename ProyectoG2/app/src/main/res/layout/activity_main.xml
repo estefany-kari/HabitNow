@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_usuario" />
 
     <Button
-        android:id="@+id/btn_iniciar"
+        android:id="@+id/btn_registrarUsuario"
         android:layout_width="320dp"
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
@@ -74,7 +74,8 @@
         app:layout_constraintEnd_toEndOf="@+id/edit_contraseña"
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="@+id/edit_contraseña"
-        app:layout_constraintTop_toBottomOf="@+id/edit_contraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_contraseña"
+        app:cornerRadius ="20pt" />
 
     <TextView
         android:id="@+id/txt_registrarse"
@@ -87,6 +88,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_iniciar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_registrarUsuario"
         app:layout_constraintVertical_bias="0.206" />
 </androidx.constraintlayout.widget.ConstraintLayout>
