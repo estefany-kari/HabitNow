@@ -21,7 +21,6 @@
         <activity android:name=".registrarUsuario" />
         <activity android:name=".CalendarioView" />
         <activity android:name=".PruebaFechaHora" />
-        <activity android:name=".PruebaFecha_Hora" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
