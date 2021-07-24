@@ -30,7 +30,7 @@
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:src="@drawable/ic_baseline_more_horiz_24" />
 
     </LinearLayout>
 
@@ -49,17 +49,16 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Trabajo"
             android:gravity="center"
-            android:textSize="20sp"
-            />
+            android:text="Trabajo"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24"
-            />
+            android:src="@drawable/ic_baseline_work_24" />
 
     </LinearLayout>
 
@@ -79,15 +78,16 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Nutrición"
             android:gravity="center"
+            android:text="Nutrición"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:src="@drawable/ic_baseline_food_bank_24" />
 
     </LinearLayout>
 
@@ -107,15 +107,16 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Social"
             android:gravity="center"
+            android:text="Social"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:src="@drawable/ic_baseline_forum_24" />
 
     </LinearLayout>
 
@@ -136,15 +137,16 @@
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:text="Aire Libre"
             android:gravity="center"
+            android:text="Aire Libre"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:src="@drawable/ic_baseline_filter_hdr_24" />
 
     </LinearLayout>
 
@@ -165,15 +167,17 @@
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:text="Hogar"
             android:gravity="center"
+            android:text="Hogar"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:scrollbarTrackVertical="@drawable/ic_baseline_house_24"
+            android:src="@drawable/ic_baseline_house_24" />
 
     </LinearLayout>
 
@@ -193,15 +197,16 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Salud"
             android:gravity="center"
+            android:text="Salud"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:src="@drawable/ic_baseline_local_hospital_24" />
 
     </LinearLayout>
 
@@ -221,8 +226,9 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Deportes"
             android:gravity="center"
+            android:text="Deportes"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
@@ -249,15 +255,16 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Entretenimiento"
             android:gravity="center"
+            android:text="Entretenimiento"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:src="@drawable/ic_baseline_emoji_symbols_24" />
 
     </LinearLayout>
 
@@ -278,8 +285,9 @@
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:text="Estudio"
             android:gravity="center"
+            android:text="Estudio"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
@@ -303,15 +311,16 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Meditación"
             android:gravity="center"
+            android:text="Meditación"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_not_interested_24" />
+            android:src="@drawable/ic_baseline_self_improvement_24" />
 
     </LinearLayout>
 
@@ -331,8 +340,9 @@
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Dejar un mal hábito"
             android:gravity="center"
+            android:text="Dejar un mal hábito"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
