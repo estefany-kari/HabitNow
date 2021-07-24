@@ -69,7 +69,6 @@
         android:layout_width="320dp"
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
-        android:background="#00D9C4"
         android:backgroundTint="#00D9C4"
         android:text="INGRESAR"
         android:textColor="#000000"
