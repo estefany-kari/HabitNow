@@ -87,6 +87,124 @@
             android:text="Fecha objetivo"
             android:textColor="#000000"
             android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayouts1"
+        android:layout_width="370dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/estilo_borde"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayouts"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayouts"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayouts">
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/estilo_borde"
+            android:gravity="center"
+            android:text="dd/mm/aaaa" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="7dp" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="días."
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutk"
+        android:layout_width="370dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayouts1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayouts1"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayouts1">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_notifications_24" />
+
+        <TextView
+            android:layout_width="223dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="Hora y recordatorios"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutd"
+        android:layout_width="370dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayoutk"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutk"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutk">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_arrow_upward_24" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="45dp"
+            android:gravity="center"
+            android:text="Prioridad"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:background="@drawable/estilo_borde"
+            android:gravity="center"
+            android:text="Normal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="32dp"
+        android:text="cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayoutd" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="32dp"
+        android:text="confirmar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayoutd"
+        app:layout_constraintStart_toEndOf="@+id/button2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

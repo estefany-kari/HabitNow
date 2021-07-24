@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         textViewRegistrarse.setOnClickListener { abrirActividad(registrarUsuario::class.java) }
 
         val btn = findViewById<Button>(R.id.btn_iniciar)
-        btn.setOnClickListener { abrirActividad(Frecuencia::class.java) }
+        btn.setOnClickListener { abrirActividad(CuandoQuieresHacerlo::class.java) }
     }
 
     fun abrirActividad(clase: Class<*>){
