@@ -11,23 +11,360 @@
         android:layout_height="65dp"
         android:background="@drawable/estilo_borde"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout8"
+        app:layout_constraintVertical_bias="0.877">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Otros"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout7"
+        app:layout_constraintVertical_bias="0.737">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Trabajo"
+            android:gravity="center"
+            android:textSize="20sp"
+            />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout9"
+        app:layout_constraintVertical_bias="0.563">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Nutrición"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout10"
+        app:layout_constraintVertical_bias="0.421">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Social"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.029">
+        app:layout_constraintVertical_bias="0.879">
 
         <TextView
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Perder malos habitos"
-            android:textSize="18" />
+            android:background="@color/white"
+            android:text="Aire Libre"
+            android:gravity="center"
+            android:textSize="20sp" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="35dp"
-            android:layout_height="45dp" />
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.743">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:text="Hogar"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Salud"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.202">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Deportes"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_sports_handball_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Entretenimiento"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.032">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:text="Estudio"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_school_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Meditación"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="205dp"
+        android:layout_height="65dp"
+        android:background="@drawable/estilo_borde"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.184">
+
+        <TextView
+            android:layout_width="154dp"
+            android:layout_height="45dp"
+            android:text="Dejar un mal hábito"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_not_interested_24" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Selecciona la categoría para tu hábito"
+        android:textColor="#00D9C4"
+        android:gravity="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
