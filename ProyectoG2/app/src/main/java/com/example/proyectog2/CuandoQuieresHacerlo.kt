@@ -3,6 +3,7 @@ package com.example.proyectog2
 import android.accessibilityservice.GestureDescription
 import android.app.Dialog
 import android.app.PendingIntent.getActivity
+import android.app.TimePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
@@ -23,6 +24,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.set
+import java.util.*
 
 
 class CuandoQuieresHacerlo : AppCompatActivity() {
@@ -39,14 +41,47 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
         fecha = findViewById<EditText>(R.id.txtHoy)
         fechaFin = findViewById<EditText>(R.id.txtFecha2)
         prioridad = findViewById<EditText>(R.id.txtPrioridad)
+        prioridad .setOnClickListener{withItems()}
 
         fecha.setOnClickListener{ShowDatePickerDialog()}
         fechaFin.setOnClickListener{ShowDatePickerDialog1()}
 
         Recordatorio = findViewById<ImageButton>(R.id.icRecordatorio)
-        prioridad .setOnClickListener{withItems()}
+        Recordatorio .setOnClickListener{RecordatorioVentana()}
 
+    }
 
+    fun RecordatorioVentana(){
+        val items = arrayOf("Alta", "Normal", "Baja")
+        val builder = AlertDialog.Builder(this)
+        val Title = SpannableString("         TIEMPO Y RECORDATORIO ")
+
+        with(builder)
+        {
+            Title.setSpan(
+                ForegroundColorSpan(Color.parseColor("#00D9C4")),
+                1,
+                Title.length,
+                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+
+            )
+            Title.setSpan(
+                StyleSpan(Typeface.BOLD),
+                8,
+                Title.length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+
+            setTitle(Title)
+            setItems(items) { dialog, which ->
+                Toast.makeText(applicationContext, items[which] + " is clicked", Toast.LENGTH_SHORT).show()
+                prioridad.setText("${items[which]}")
+            }
+
+            setPositiveButton("CANCELAR", null)
+            setNegativeButton("AÑADIR", null)
+            show()
+        }
     }
 
     fun withItems() {
@@ -78,8 +113,7 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
                 prioridad.setText("${items[which]}")
             }
 
-            val positiveButtonClick = null
-            setPositiveButton("CANCELAR", positiveButtonClick)
+            setNegativeButton("CANCELAR", null)
             show()
         }
     }
