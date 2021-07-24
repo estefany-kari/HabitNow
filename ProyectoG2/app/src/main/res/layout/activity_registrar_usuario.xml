@@ -90,10 +90,9 @@
         />
 
     <Button
- proyecto
+
         android:id="@+id/btn_ingresarUsuario"
-        android:id="@+id/btn_ingresar"
-main
+
         android:layout_width="168dp"
         android:layout_height="51dp"
         android:layout_marginEnd="16dp"

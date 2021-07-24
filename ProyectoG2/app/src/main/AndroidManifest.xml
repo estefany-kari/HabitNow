@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoG2">
-        <activity android:name=".frecuencia_habito"></activity>
+        <activity android:name=".Habitos"></activity>
+        <activity android:name=".frecuencia_habito" />
         <activity android:name=".NuevaTarea" />
         <activity android:name=".CuandoQuieresHacerlo" />
         <activity android:name=".DefinirHabito" />
