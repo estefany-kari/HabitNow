@@ -16,8 +16,10 @@ import android.text.SpannableString
 import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
+import android.util.Log
 import android.view.View
 import android.view.Window
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
@@ -79,10 +81,43 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             }
 
             setPositiveButton("CANCELAR", null)
-            setNegativeButton("AÑADIR", null)
+            setNegativeButton("AÑADIR",  DialogInterface.OnClickListener { dialog, which ->
+                hora()
+                Log.i("AÑADIR HORA", "HORA AGREGADA")
+            })
             show()
         }
     }
+
+    fun addItems(){
+
+    }
+    fun anadirItemsAListView(
+        valor: BHora,
+        arreglo: ArrayList<BHora>,
+        adaptador: ArrayAdapter<BHora>
+    ) {
+        arreglo.add(valor)
+        adaptador.notifyDataSetChanged()        //Actualiza la interfaz
+    }
+
+    fun hora(){
+        val cal = Calendar.getInstance()
+        val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+            cal.set(Calendar.HOUR_OF_DAY, hour)
+            cal.set(Calendar.MINUTE, minute)
+            //hora.setText("${hour} : ${minute}")
+            println("${hour} : ${minute}")
+        }
+        TimePickerDialog(
+            this,
+            timeSetListener,
+            cal.get(Calendar.HOUR_OF_DAY),
+            cal.get(Calendar.MINUTE),
+            true
+        ).show()
+    }
+
 
     fun withItems() {
 
