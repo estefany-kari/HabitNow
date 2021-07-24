@@ -79,6 +79,10 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         return if (resultadoEscritura.toInt() == -1) false else true
     }
 
+    //crear tareas
+
+    //crear hábitos
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
     }
