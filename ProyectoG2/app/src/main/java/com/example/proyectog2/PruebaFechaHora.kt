@@ -54,4 +54,6 @@ class PruebaFechaHora : AppCompatActivity() {
     fun OnDateSelected(day:Int, month:Int, year:Int){
         fecha.setText("${day}/${month}/${year}")
     }
+
+
 }

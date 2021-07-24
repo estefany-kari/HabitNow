@@ -39,6 +39,8 @@
         android:layout_height="51dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:clickable="true"
+        android:focusable="false"
         android:hint="Nombre de usuario"
         android:inputType="textPersonName"
         android:textColor="#707070"
@@ -88,7 +90,7 @@
         />
 
     <Button
-        android:id="@+id/btn_registrarUsuario"
+        android:id="@+id/btn_ingresar"
         android:layout_width="168dp"
         android:layout_height="51dp"
         android:layout_marginEnd="16dp"
