@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -17,7 +18,11 @@ class MainActivity : AppCompatActivity() {
 
         textViewRegistrarse.setOnClickListener { abrirActividad(registrarUsuario::class.java) }
 
+    proyecto
         val btn = findViewById<Button>(R.id.btn_ingresarUsuario)
+
+        val btn = findViewById<Button>(R.id.btn_ingresar)
+      main
         btn.setOnClickListener { abrirActividad(CuandoQuieresHacerlo::class.java) }
     }
 
