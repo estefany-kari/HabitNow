@@ -44,7 +44,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             ID_USUARIO INTEGER,
             NOMBRE VARCHAR(50),
             DESCRIPCION VARCHAR(50),
-            FECUENCIA VARCHAR(5),
+            FRECUENCIA VARCHAR(5),
             FECHAINICIO VARCHAR(15),
             FECHAFIN VARCHAR(15)
             HORA VARCHAR(5),
@@ -55,6 +55,37 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         Log.i("bdd", "Creacion tabla Habito")
         db?.execSQL(scriptCrearTablaHabitos)
     }
+
+    //Funcion para consultar el Usuario
+        fun consultarUsuario(usuario:String, clave:String): UsuarioBDD{
+            val scriptConsultarUsuario = "SELECT NOMBREUSUARIO, CONTRASEÑA FROM USUARIO WHERE NOMBREUSUARIO = ${usuario} AND CONTRASEÑA =${clave}"
+            val baseDatosLectura = readableDatabase
+            val resultadoConsultaLectura = baseDatosLectura.rawQuery(
+                scriptConsultarUsuario,
+                null
+            )
+            val existeUsuario = resultadoConsultaLectura.moveToFirst()
+            //val arregloUsuario = arrayListOf<EUsuarioBDD>()       //En caso de3 necesitar un arreglo de registros
+            val usuarioEncontrado = UsuarioBDD(0,null,"","",null)
+            if (existeUsuario){
+                do{
+
+                    val nombreUsuario = resultadoConsultaLectura.getString(1) //Columna indice 1 -> NOMBRE
+                    val claveUsuario = resultadoConsultaLectura.getString(3) //Columna indice 3 -> clave
+
+                    if(nombreUsuario!=null){
+
+                        usuarioEncontrado.nombre = nombreUsuario
+                        usuarioEncontrado.contraseña =claveUsuario
+                    }
+                }while (resultadoConsultaLectura.moveToNext())
+            }
+            resultadoConsultaLectura.close()
+            baseDatosLectura.close()
+            return usuarioEncontrado
+        }
+    //Funcion
+
     fun crearUsuarioFormulario(
         nombre: String,
         nombreUsuario: String,
@@ -78,11 +109,11 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         return if (resultadoEscritura.toInt() == -1) false else true
     }
 
+
     //crear tareas
 
     //crear hábitos
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
     }
 }
