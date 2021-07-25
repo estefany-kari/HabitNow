@@ -62,11 +62,15 @@
         android:errorEnable= "true"/>
 
     <Button
+<<<<<<< Updated upstream
 
         android:id="@+id/btn_ingresarUsuario"
 
 
 
+=======
+        android:id="@+id/btn_ingresarUsuario"
+>>>>>>> Stashed changes
         android:layout_width="320dp"
         android:layout_height="52dp"
         android:layout_marginTop="16dp"
@@ -92,7 +96,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias ="0.155"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         app:layout_constraintTop_toBottomOf="@+id/btn_ingresarUsuario"
         app:layout_constraintVertical_bias="0.206" />
 </androidx.constraintlayout.widget.ConstraintLayout>
