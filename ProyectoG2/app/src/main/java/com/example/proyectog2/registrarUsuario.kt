@@ -32,7 +32,6 @@ class registrarUsuario : AppCompatActivity() {
         botonRegistrar.setOnClickListener {
             if(BaseDeDatos.TablaUsuario!=null){
                 agregarNuevoUsuario()
-                //EBaseDeDatos.TablaUsuario!!.crearUsuarioFormulario(txtNombreAAgregar,txtdescAAgregar)
                 etNombre.setText("")
                 edi_nombreUsuario.setText("")
                 txtFecha.setText("")
