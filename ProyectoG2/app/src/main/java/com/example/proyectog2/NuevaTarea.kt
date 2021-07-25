@@ -70,7 +70,7 @@ class NuevaTarea : AppCompatActivity() {
                 Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
             } else {
 
-                val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(1,categoriaTarea, nombreT,fechaT,horaTarea, PrioridadTarea)
+               // val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(1,categoriaTarea, nombreT,fechaT,horaTarea, PrioridadTarea)
 
                 val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(3,categoriaTarea,nombreT, fechaT,
                     horaTarea, PrioridadTarea)
