@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar()?.hide();
         setContentView(R.layout.activity_main)
+
         val textViewRegistrarse = findViewById<TextView>(R.id.txt_registrarse)
 
         textViewRegistrarse.setOnClickListener { abrirActividad(registrarUsuario::class.java) }

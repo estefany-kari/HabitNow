@@ -1,12 +1,10 @@
 package com.example.proyectog2
 
-import android.database.sqlite.SQLiteOpenHelper
-
 class BaseDeDatos {
     companion object{
-        var TablaUsuario: SQLiteOpenHelper? = null
-        var TablaTarea: SQLiteOpenHelper? = null
-        var TablaHabito: SQLiteOpenHelper? = null
+        var TablaUsuario: SQLiteHelper? = null
+        var TablaTarea: SQLiteHelper? = null
+        var TablaHabito: SQLiteHelper? = null
 
     }
 }

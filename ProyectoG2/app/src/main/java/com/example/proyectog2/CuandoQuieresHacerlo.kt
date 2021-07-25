@@ -49,7 +49,27 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
         btnAnterior .setOnClickListener { abrirActividad(Inicio::class.java) }
 
         val btnConfirmar = findViewById<Button>(R.id.btn_confirmarCuando)
-        btnConfirmar .setOnClickListener { abrirActividad(Inicio::class.java) }
+        btnConfirmar .setOnClickListener {
+            val fechaIn = fecha.text.toString()
+            val FechaF = fechaFin.text.toString()
+            val PrioridadH = prioridad.text.toString()
+            val horaH = hora.text.toString()
+
+            if (fechaIn.isEmpty() ||FechaF.isEmpty() || PrioridadH.isEmpty() || horaH.isEmpty() ) {
+                Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
+            } else {
+                val estado = BaseDeDatos.TablaHabito!!.crearHabitoFormulario(1, fechaIn, FechaF, horaH, PrioridadH)
+
+                if (estado != null) {
+                    Log.i("añadir Estudiante", "Datos: ${fechaIn} --> ${horaH} --> ${PrioridadH}")
+
+                } else {
+                    Toast.makeText(this, "Datos no ingresados", Toast.LENGTH_LONG).show()
+
+                }
+            }
+            abrirActividad(Inicio::class.java)
+        }
 
     }
     fun abrirActividad(clase: Class<*>){
