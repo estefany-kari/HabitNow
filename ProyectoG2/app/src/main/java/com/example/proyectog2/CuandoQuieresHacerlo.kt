@@ -26,6 +26,7 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
     private lateinit var fechaFin: EditText
     private lateinit var Recordatorio: ImageButton
     private lateinit var prioridad: EditText
+    private lateinit var hora: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,9 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
         fechaFin = findViewById<EditText>(R.id.txtFecha2)
         prioridad = findViewById<EditText>(R.id.txtPrioridad)
         prioridad .setOnClickListener{withItems()}
+
+        hora = findViewById(R.id.EtHora)
+        hora .setOnClickListener{hora()}
 
         fecha.setOnClickListener{ShowDatePickerDialog()}
         fechaFin.setOnClickListener{ShowDatePickerDialog1()}
@@ -81,25 +85,12 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
         }
     }
 
-    fun addItems(){
-
-    }
-    fun anadirItemsAListView(
-        valor: BHora,
-        arreglo: ArrayList<BHora>,
-        adaptador: ArrayAdapter<BHora>
-    ) {
-        arreglo.add(valor)
-        adaptador.notifyDataSetChanged()        //Actualiza la interfaz
-    }
-
     fun hora(){
         val cal = Calendar.getInstance()
         val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
             cal.set(Calendar.HOUR_OF_DAY, hour)
             cal.set(Calendar.MINUTE, minute)
-            //hora.setText("${hour} : ${minute}")
-            println("${hour} : ${minute}")
+            hora.setText("${hour} : ${minute}")
         }
         TimePickerDialog(
             this,

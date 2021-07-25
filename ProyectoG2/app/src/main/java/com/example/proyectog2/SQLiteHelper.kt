@@ -26,9 +26,9 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             """
             CREATE TABLE TAREA(
             ID_TAREA INTEGER PRIMARY KEY AUTOINCREMENT,
-            ID_PROF INTEGER,
+            ID_USUARIO INTEGER,
             NOMBRE VARCHAR(50),
-            FECHA INTEGER,
+            FECHA VARCHAR(15),
             HORA VARCHAR(5),
             PRIORIDAD VARCHAR(15),
             FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO) 
@@ -44,7 +44,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             ID_USUARIO INTEGER,
             NOMBRE VARCHAR(50),
             DESCRIPCION VARCHAR(50),
-            FRECUENCIA VARCHAR(5),
+            FRECUENCIA VARCHAR(50),
             FECHAINICIO VARCHAR(15),
             FECHAFIN VARCHAR(15)
             HORA VARCHAR(5),
@@ -111,8 +111,62 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
 
 
     //crear tareas
+    fun crearTareaFormulario(
+        idUsuario: Int,
+        NombreTarea: String,
+        FechaTarea: String,
+        horaTarea: String,
+        prioridad: String
+    ): Boolean{
+        val conexionEscritura = writableDatabase
+        val valoresAGuardar = ContentValues()
+        valoresAGuardar.put("id_usuario", idUsuario)
+        valoresAGuardar.put("nombre", NombreTarea)
+        valoresAGuardar.put("fecha", FechaTarea)
+        valoresAGuardar.put("hora", horaTarea)
+        valoresAGuardar.put("prioridada", prioridad)
+
+        val resultadoEscritura: Long = conexionEscritura
+            .insert(
+                "TAREA",
+                null,
+                valoresAGuardar
+            )
+        conexionEscritura.close()
+        return if (resultadoEscritura.toInt() == -1) false else true
+    }
 
     //crear hábitos
+    fun crearHabitoFormulario(
+        idUsuario: Int,
+        NombreHabito: String,
+        descripcion: String,
+        fecuencia: String,
+        FechaInicio: String,
+        fechaFin: String,
+        horaHábito: String,
+        prioridad: String
+    ): Boolean{
+        val conexionEscritura = writableDatabase
+        val valoresAGuardar = ContentValues()
+        valoresAGuardar.put("id_usuario", idUsuario)
+        valoresAGuardar.put("nombre", NombreHabito)
+        valoresAGuardar.put("descripcion", descripcion)
+        valoresAGuardar.put("frecuencia", fecuencia)
+        valoresAGuardar.put("fechaInicio", FechaInicio)
+        valoresAGuardar.put("fechaFin", fechaFin)
+        valoresAGuardar.put("hora", horaHábito)
+        valoresAGuardar.put("prioridad", prioridad)
+
+        val resultadoEscritura: Long = conexionEscritura
+            .insert(
+                "HABITO",
+                null,
+                valoresAGuardar
+            )
+        conexionEscritura.close()
+        return if (resultadoEscritura.toInt() == -1) false else true
+    }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
