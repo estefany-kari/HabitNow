@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar()?.hide();
         setContentView(R.layout.activity_main)
+
         val textViewRegistrarse = findViewById<TextView>(R.id.txt_registrarse)
 
         textViewRegistrarse.setOnClickListener { abrirActividad(registrarUsuario::class.java) }
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-        btnIngresarUsuario.setOnClickListener { abrirActividad(NuevaTarea::class.java) }
+        btnIngresarUsuario.setOnClickListener { abrirActividad(CategoriasHabitos::class.java) }
 
     }
 
