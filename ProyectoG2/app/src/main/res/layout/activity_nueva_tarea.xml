@@ -36,26 +36,28 @@
     <Button
         android:id="@+id/id_cancelarTarea"
         android:layout_width="168dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="34dp"
         android:layout_marginBottom="56dp"
-        android:background="#A9F1E5"
         android:backgroundTint="#A9F1E5"
+        android:drawableStart="@drawable/estilo_borde__circular"
         android:text="CANCELAR"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:cornerRadius="20px"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_confirmarTarea"
         android:layout_width="168dp"
-        android:layout_height="51dp"
+        android:layout_height="66dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="56dp"
-        android:background="#00D9C4"
         android:backgroundTint="#00D9C4"
         android:drawableStart="@drawable/estilo_borde__circular"
         android:text="CONFIRMAR"
@@ -65,13 +67,15 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/id_cancelarTarea" />
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toEndOf="@+id/id_cancelarTarea"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="379dp"
-        android:layout_height="62dp"
+        android:layout_width="374dp"
+        android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/estilo_borde"
         android:orientation="horizontal"
@@ -94,8 +98,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Categoría"
             android:gravity="center"
+            android:text="Categoría"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="normal" />
@@ -105,8 +109,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tarea"
             android:gravity="center"
+            android:text="Tarea"
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -122,15 +126,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="379dp"
-        android:layout_height="62dp"
+        android:layout_width="374dp"
+        android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/estilo_borde"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/linearLayout4"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" >
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <ImageButton
             android:id="@+id/imageButton5"
@@ -145,29 +149,31 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="Hora y recordatorios"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="normal" />
 
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="49dp"
-            android:layout_height="46dp"
+        <Button
+            android:id="@+id/btn_HoraRecordatorio"
+            android:layout_width="13dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
-            android:text= "0"
-            android:background="@color/white"
-            android:textAlignment="center"
-            app:srcCompat="@drawable/estilo_borde__circular" />
+            android:backgroundTint="#A9F1E5"
+            android:drawableStart="@drawable/estilo_borde__circular"
+            android:text="0"
+            android:textColor="#000000"
+
+            app:cornerRadius="30dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="379dp"
-        android:layout_height="62dp"
+        android:layout_width="374dp"
+        android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/estilo_borde"
         android:orientation="horizontal"
@@ -190,14 +196,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Prioridad"
             android:gravity="center"
+            android:text="Prioridad"
             android:textColor="#000000"
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/txtHoy2"
-            android:layout_width="92dp"
+            android:id="@+id/btn_PrioridadTarea"
+            android:layout_width="79dp"
             android:layout_height="45dp"
             android:layout_weight="1"
             android:background="@drawable/estilo_bordes"
@@ -212,15 +218,15 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="379dp"
-        android:layout_height="62dp"
+        android:layout_width="374dp"
+        android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/estilo_borde"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" >
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -236,16 +242,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Fecha"
             android:gravity="center"
+            android:text="Fecha"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="normal" />
 
         <EditText
-            android:id="@+id/txtHoy"
-            android:layout_width="92dp"
-            android:layout_height="45dp"
+            android:id="@+id/btn_fechaTarea"
+            android:layout_width="79dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/estilo_bordes"
             android:clickable="true"
             android:ems="10"

@@ -54,24 +54,35 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_cancelarCuando"
         android:layout_width="160dp"
-        android:layout_height="60dp"
+        android:layout_height="66dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="#A9F1E5"
+        android:drawableStart="@drawable/estilo_borde__circular"
         android:text="Anterior"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/editText3" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_confirmarCuando"
         android:layout_width="160dp"
-        android:layout_height="60dp"
+        android:layout_height="66dp"
         android:layout_marginBottom="32dp"
+        android:drawableStart="@drawable/estilo_borde__circular"
         android:text="Siguiente"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editText3"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/btn_cancelarCuando" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

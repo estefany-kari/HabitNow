@@ -55,7 +55,6 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         Log.i("bdd", "Creacion tabla Habito")
         db?.execSQL(scriptCrearTablaHabitos)
     }
-
     fun crearUsuarioFormulario(
         nombre: String,
         nombreUsuario: String,

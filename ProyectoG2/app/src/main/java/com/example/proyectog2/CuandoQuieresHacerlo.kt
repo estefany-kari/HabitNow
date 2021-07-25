@@ -1,19 +1,10 @@
 package com.example.proyectog2
 
-import android.accessibilityservice.GestureDescription
-import android.app.Dialog
-import android.app.PendingIntent.getActivity
-import android.app.TimePickerDialog
-import android.content.DialogInterface
-import android.content.Intent
 import android.graphics.Color
-import android.graphics.Color.parseColor
 import android.graphics.Typeface
-import android.icu.text.CaseMap
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
-import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.util.Log
@@ -25,7 +16,6 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.set
 import java.util.*
 
 
@@ -40,7 +30,7 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar()?.hide();
         setContentView(R.layout.activity_cuando_quieres_hacerlo)
-        fecha = findViewById<EditText>(R.id.txtHoy)
+        fecha = findViewById<EditText>(R.id.btn_fechaTarea)
         fechaFin = findViewById<EditText>(R.id.txtFecha2)
         prioridad = findViewById<EditText>(R.id.txtPrioridad)
         prioridad .setOnClickListener{withItems()}
