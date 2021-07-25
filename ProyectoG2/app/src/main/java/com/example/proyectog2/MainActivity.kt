@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-        btnIngresarUsuario.setOnClickListener { abrirActividad(NuevaTarea::class.java) }
+        btnIngresarUsuario.setOnClickListener { abrirActividad(CategoriasHabitos::class.java) }
 
     }
 

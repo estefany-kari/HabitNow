@@ -19,10 +19,11 @@
         app:layout_constraintVertical_bias="0.877">
 
         <TextView
+            android:id="@+id/Otros"
             android:layout_width="154dp"
             android:layout_height="45dp"
-            android:text="Otros"
             android:gravity="center"
+            android:text="Otros"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -47,6 +48,7 @@
         app:layout_constraintVertical_bias="0.737">
 
         <TextView
+            android:id="@+id/Trabajo"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -76,6 +78,7 @@
         app:layout_constraintVertical_bias="0.563">
 
         <TextView
+            android:id="@+id/Nutricion"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -105,6 +108,7 @@
         app:layout_constraintVertical_bias="0.421">
 
         <TextView
+            android:id="@+id/Social"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -134,6 +138,7 @@
         app:layout_constraintVertical_bias="0.879">
 
         <TextView
+            android:id="@+id/AireLibre"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:background="@color/white"
@@ -164,6 +169,7 @@
         app:layout_constraintVertical_bias="0.743">
 
         <TextView
+            android:id="@+id/Hogar"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:background="@color/white"
@@ -195,6 +201,7 @@
         app:layout_constraintVertical_bias="0.604">
 
         <TextView
+            android:id="@+id/Salud"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -224,6 +231,7 @@
         app:layout_constraintVertical_bias="0.202">
 
         <TextView
+            android:id="@+id/Deportes"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -253,6 +261,7 @@
         app:layout_constraintVertical_bias="0.464">
 
         <TextView
+            android:id="@+id/Entretenimiento"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -282,6 +291,7 @@
         app:layout_constraintVertical_bias="0.032">
 
         <TextView
+            android:id="@+id/Estudio"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:background="@color/white"
@@ -311,6 +321,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
+            android:id="@+id/Meditacion"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"
@@ -340,6 +351,7 @@
         app:layout_constraintVertical_bias="0.184">
 
         <TextView
+            android:id="@+id/txtDejarHabito"
             android:layout_width="154dp"
             android:layout_height="45dp"
             android:gravity="center"

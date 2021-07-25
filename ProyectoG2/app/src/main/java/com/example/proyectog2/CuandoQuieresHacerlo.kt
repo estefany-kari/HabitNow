@@ -2,6 +2,7 @@ package com.example.proyectog2
 
 import android.app.TimePickerDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -12,10 +13,7 @@ import android.text.style.StyleSpan
 import android.util.Log
 import android.view.View
 import android.view.Window
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -47,6 +45,19 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
         Recordatorio = findViewById<ImageButton>(R.id.icRecordatorio)
         Recordatorio .setOnClickListener{RecordatorioVentana()}
 
+        val btnAnterior = findViewById<Button>(R.id.btn_cancelarCuando)
+        btnAnterior .setOnClickListener { abrirActividad(Inicio::class.java) }
+
+        val btnConfirmar = findViewById<Button>(R.id.btn_confirmarCuando)
+        btnConfirmar .setOnClickListener { abrirActividad(Inicio::class.java) }
+
+    }
+    fun abrirActividad(clase: Class<*>){
+        val intentExplicito = Intent(
+            this,
+            clase
+        )
+        startActivity(intentExplicito)
     }
 
     fun RecordatorioVentana(){

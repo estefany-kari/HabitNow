@@ -32,9 +32,6 @@ class NuevaTarea : AppCompatActivity() {
         prioridad=findViewById(R.id.btn_PrioridadTarea)
         prioridad .setOnClickListener{withItems()}
 
-        val timePicker: TimePicker
-        val hour: Int
-        val minute: Int
 
         botonHoraTarea. setOnClickListener {
 
