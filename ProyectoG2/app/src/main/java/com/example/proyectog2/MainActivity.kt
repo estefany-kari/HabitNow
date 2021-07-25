@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         val btnIngresarUsuario = findViewById<Button>(R.id.btn_ingresarUsuario)
 
-
         btnIngresarUsuario.setOnClickListener { abrirActividad(NuevaTarea::class.java) }
     }
 

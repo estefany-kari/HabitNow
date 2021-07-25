@@ -1,5 +1,6 @@
 package com.example.proyectog2
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -14,7 +15,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             ID_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT,
             NOMBRE VARCHAR(50),
             NOMBREUSUARIO VARCHAR(50),
-            CONTRASEÑA VARCHAR(16),
+            CONTRASENIA VARCHAR(16),
             FECHANACIMIENTO VARCHAR(15),
             );
             """.trimIndent()
@@ -30,7 +31,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             FECHA INTEGER,
             HORA VARCHAR(5),
             PRIORIDAD VARCHAR(15),
-            FOREIGN KEY(ID_PROF) REFERENCES PROFESOR(ID_PROFESOR) 
+            FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO) 
             );
             """.trimIndent()
         Log.i("bdd", "Creacion tabla Tarea")
@@ -40,7 +41,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             """
             CREATE TABLE HABITO(
             ID_HABITO INTEGER PRIMARY KEY AUTOINCREMENT,
-            ID_PROF INTEGER,
+            ID_USUARIO INTEGER,
             NOMBRE VARCHAR(50),
             DESCRIPCION VARCHAR(50),
             FECUENCIA VARCHAR(5),
@@ -48,15 +49,38 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             FECHAFIN VARCHAR(15)
             HORA VARCHAR(5),
             PRIORIDAD VARCHAR(15),
-            FOREIGN KEY(ID_PROF) REFERENCES PROFESOR(ID_PROFESOR) 
+            FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO) 
             );
             """.trimIndent()
         Log.i("bdd", "Creacion tabla Habito")
         db?.execSQL(scriptCrearTablaHabitos)
     }
-        fun NuevaTarea(){
+    fun crearUsuarioFormulario(
+        nombre: String,
+        nombreUsuario: String,
+        contrasenia: String,
+        FechaNac: String
+    ): Boolean{
+        val conexionEscritura = writableDatabase
+        val valoresAGuardar = ContentValues()
+        valoresAGuardar.put("nombre", nombre)
+        valoresAGuardar.put("nombreUsuario", nombreUsuario)
+        valoresAGuardar.put("contrasenia", contrasenia)
+        valoresAGuardar.put("fechaNacimiento", FechaNac)
 
+        val resultadoEscritura: Long = conexionEscritura
+            .insert(
+                "USUARIO",
+                null,
+                valoresAGuardar
+            )
+        conexionEscritura.close()
+        return if (resultadoEscritura.toInt() == -1) false else true
     }
+
+    //crear tareas
+
+    //crear hábitos
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
