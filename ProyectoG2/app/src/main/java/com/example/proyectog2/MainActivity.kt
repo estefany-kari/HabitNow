@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     val datos = SQLiteHelper(this)
@@ -25,8 +27,14 @@ class MainActivity : AppCompatActivity() {
 
 
         btnIngresarUsuario.setOnClickListener {
+            val usuario =edit_usuario.text.toString()
+            val passw = edit_contraseña.text.toString()
+            if(usuario.isBlank()&&passw.isBlank()){
+                Toast.makeText(this,"Debe llenar todos los campos", Toast.LENGTH_SHORT).show()
+            }else{
+                validarUsuario()
+             }
 
-            validarUsuario()
 
             }
 
