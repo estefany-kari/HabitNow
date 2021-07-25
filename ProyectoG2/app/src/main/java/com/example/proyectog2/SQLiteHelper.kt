@@ -139,57 +139,12 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
     }
 
     //crear hábitos
-    fun crearHabitoCategoria(
-        categoria: String
-    ): Boolean{
-        val conexionEscritura = writableDatabase
-        val valoresAGuardar = ContentValues()
-        valoresAGuardar.put("categoria", categoria)
-
-        val resultadoEscritura: Long = conexionEscritura
-            .insert(
-                "HABITO",
-                null,
-                valoresAGuardar
-            )
-        conexionEscritura.close()
-        return if (resultadoEscritura.toInt() == -1) false else true}
-
-    fun crearFrecuenciaHabito(
-        frecuenciaHabito: String
-    ): Boolean{
-        val conexionEscritura = writableDatabase
-        val valoresAGuardar = ContentValues()
-        valoresAGuardar.put("frecuencia", frecuenciaHabito)
-
-        val resultadoEscritura: Long = conexionEscritura
-            .insert(
-                "HABITO",
-                null,
-                valoresAGuardar
-            )
-        conexionEscritura.close()
-        return if (resultadoEscritura.toInt() == -1) false else true}
-    fun crearNombreHabito(
-        NombreHabito: String,
-        descripcion: String,
-    ): Boolean{
-        val conexionEscritura = writableDatabase
-        val valoresAGuardar = ContentValues()
-        valoresAGuardar.put("nombre", NombreHabito)
-        valoresAGuardar.put("descripcion", descripcion)
-        val resultadoEscritura: Long = conexionEscritura
-            .insert(
-                "HABITO",
-                null,
-                valoresAGuardar
-            )
-        conexionEscritura.close()
-        return if (resultadoEscritura.toInt() == -1) false else true
-    }
-
     fun crearHabitoFormulario(
         idUsuario: Int,
+        categoria: String,
+        frecuenciaHabito: String,
+        NombreHabito: String,
+        descripcion: String,
         FechaInicio: String,
         fechaFin: String,
         horaHábito: String,
@@ -198,6 +153,10 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         val conexionEscritura = writableDatabase
         val valoresAGuardar = ContentValues()
         valoresAGuardar.put("id_usuario", idUsuario)
+        valoresAGuardar.put("categoria", categoria)
+        valoresAGuardar.put("frecuencia", frecuenciaHabito)
+        valoresAGuardar.put("nombre", NombreHabito)
+        valoresAGuardar.put("descripcion", descripcion)
         valoresAGuardar.put("fechaInicio", FechaInicio)
         valoresAGuardar.put("fechaFin", fechaFin)
         valoresAGuardar.put("hora", horaHábito)
@@ -214,37 +173,51 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
     }
 
     fun consultarHabito(): ArrayList<HabitoBDD> {
-        val scriptConsultarProf = "SELECT * FROM HABITO"
+        val scriptConsultaProfesor = "SELECT * FROM HABITO "
         val baseDatosLectura = readableDatabase
-        val resultaConsultaLectura = baseDatosLectura.rawQuery(scriptConsultarProf, null)
-        val existeUsuario = resultaConsultaLectura.moveToFirst()
-        val arregloProfesor = arrayListOf<HabitoBDD>()
+        val resultaConsultaLectura = baseDatosLectura.rawQuery(scriptConsultaProfesor, null)
+        val existeEstudiante = resultaConsultaLectura.moveToFirst()
+        val arregloEstudiante = arrayListOf<HabitoBDD>()
 
-        if(existeUsuario){
+        if(existeEstudiante){
             do{
                 val id = resultaConsultaLectura.getInt(0)
                 if(id!=null){
-                    arregloProfesor.add(
-                        HabitoBDD(id,
-                            resultaConsultaLectura.getString(1),
+                    arregloEstudiante.add(
+                        HabitoBDD(id,1,
                             resultaConsultaLectura.getString(2),
                             resultaConsultaLectura.getString(3),
                             resultaConsultaLectura.getString(4),
                             resultaConsultaLectura.getString(5),
                             resultaConsultaLectura.getString(6),
                             resultaConsultaLectura.getString(7),
-                            resultaConsultaLectura.getString(8)
-                        ))
+                            resultaConsultaLectura.getString(8),
+                            resultaConsultaLectura.getString(9)
+
+                        )
+                    )
                 }
-                println("${id}")
             }while(resultaConsultaLectura.moveToNext())
         }
-
         resultaConsultaLectura.close()
         baseDatosLectura.close()
-        return arregloProfesor
+        return arregloEstudiante
     }
 
+    fun eliminarHabito (id: Int): Boolean {
+
+        val conexionEscritura = writableDatabase
+        val resultadoEliminacion = conexionEscritura
+            .delete(
+                "HABITO",
+                "ID_HABITO=?",
+                arrayOf(id.toString())
+            )
+        conexionEscritura.close()
+        return if (resultadoEliminacion.toInt() == -1) false else true
+    }
+
+    fun actualizarHabito(){}
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
 }

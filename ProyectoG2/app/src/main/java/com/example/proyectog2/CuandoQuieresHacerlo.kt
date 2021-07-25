@@ -50,6 +50,10 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
 
         val btnConfirmar = findViewById<Button>(R.id.btn_confirmarCuando)
         btnConfirmar .setOnClickListener {
+            val cat = CategoriasHabitos.Categoria
+            val frecuencia = frecuencia_habito.Frecuencia
+            val nombreH = DefinirHabito.NombreHab
+            val descripcionHab = DefinirHabito.DescHab
             val fechaIn = fecha.text.toString()
             val FechaF = fechaFin.text.toString()
             val PrioridadH = prioridad.text.toString()
@@ -58,7 +62,8 @@ class CuandoQuieresHacerlo : AppCompatActivity() {
             if (fechaIn.isEmpty() ||FechaF.isEmpty() || PrioridadH.isEmpty() || horaH.isEmpty() ) {
                 Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
             } else {
-                val estado = BaseDeDatos.TablaHabito!!.crearHabitoFormulario(1, fechaIn, FechaF, horaH, PrioridadH)
+                val estado = BaseDeDatos.TablaHabito!!.crearHabitoFormulario(1, cat, frecuencia, nombreH, descripcionHab,
+                    fechaIn, FechaF, horaH, PrioridadH)
 
                 if (estado != null) {
                     Log.i("añadir Estudiante", "Datos: ${fechaIn} --> ${horaH} --> ${PrioridadH}")
