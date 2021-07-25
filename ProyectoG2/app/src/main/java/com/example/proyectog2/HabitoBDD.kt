@@ -3,10 +3,11 @@ package com.example.proyectog2
 import android.os.Parcel
 import android.os.Parcelable
 
-class HabitoBDD(var idHabito:Int, var categoria:String?, var nombreHabito:String?, var descripcion:String?,
+class HabitoBDD(var idHabito:Int, var idUsuario:Int , var categoria:String?, var nombreHabito:String?, var descripcion:String?,
                var frecuencia:String?, var fechaInicio:String?,
                var fechaFin:String?, var hora:String?, var prioridad:String?):Parcelable   {
     constructor(parcel: Parcel) : this(
+        parcel.readInt(),
         parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
@@ -25,6 +26,7 @@ class HabitoBDD(var idHabito:Int, var categoria:String?, var nombreHabito:String
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(idHabito)
+        parcel.writeInt(idUsuario)
         parcel.writeString(categoria)
         parcel.writeString(nombreHabito)
         parcel.writeString(descripcion)
@@ -36,8 +38,15 @@ class HabitoBDD(var idHabito:Int, var categoria:String?, var nombreHabito:String
 
     }
     override fun toString(): String {
-        return "Habito:  $nombreHabito \n" +
-                " Habito \n"
+        return "Habito:  $idHabito \n" +
+                "Categoria: $categoria \n" +
+                "Nombre: $nombreHabito \n"+
+                "Desc: $descripcion\n"+
+                "Frecuencia: $frecuencia\n"+
+                "f I: $fechaInicio\n"+
+                "f f: $fechaFin\n"+
+                "hora: $hora \n" +
+                "fecuencia : $prioridad"
     }
 
     companion object CREATOR : Parcelable.Creator<HabitoBDD> {

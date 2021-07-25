@@ -5,92 +5,37 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 
-class Inicio : AppCompatActivity() {
+class MisTareas : AppCompatActivity() {
     companion object{
         var idProf = 0
     }
     private var calendario = false
 
     var posicionItem = 0
-    var adapter: ArrayAdapter<HabitoBDD>? = null
+    var adapter: ArrayAdapter<Tarea>? = null
     val CODIGO_RESPUESTA_INTENT_EXPLICITO = 401
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inicio)
+        setContentView(R.layout.activity_mis_tareas)
         val actionBar = supportActionBar
         actionBar!!.title = "New Title"
-        BaseDeDatos.TablaHabito= SQLiteHelper(this)
+        BaseDeDatos.TablaTarea= SQLiteHelper(this)
 
-        if(BaseDeDatos.TablaHabito != null) {
-            val profesor = BaseDeDatos.TablaHabito!!.consultarHabito()
+        if(BaseDeDatos.TablaTarea != null) {
+            val profesor = BaseDeDatos.TablaTarea!!.consultarTarea()
             adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, profesor)
-            val listViewUsuario = findViewById<ListView>(R.id.lv_inicio)
+            val listViewUsuario = findViewById<ListView>(R.id.lv_tareas)
             listViewUsuario.adapter = adapter
             registerForContextMenu(listViewUsuario)
-
         }
     }
-
-    private fun calendarIcon(menuItem: MenuItem?){
-        val id = if (calendario) R.drawable.ic_baseline_calendar_today_24;
-        else R.drawable.ic_baseline_calendar_today_24;
-
-        if (menuItem != null) {
-            menuItem.icon = ContextCompat.getDrawable(this, id)
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_inicio, menu)
-
-        calendarIcon(menu?.findItem(R.id.IcCalendario))
-
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        return when (item?.itemId) {
-            //Editar
-            R.id.icHoy -> {
-                //Log.i(
-                  //  "list-view", "Editar ${
-                        //BBaseDatosMemoria.arregloBEntrenador[
-                          //      posicionItemSeleccionado
-                        //]
-                    //}"
-                //)
-                return true
-            }
-            //Eliminar
-            R.id.icHabitos -> {
-
-                return true
-            }
-            R.id.IcCalendario ->{
-                abrirActividad(CalendarioView::class.java)
-                return true
-            }
-            R.id.icEditar ->{
-                    //abrirActividadConParametros(CuandoQuieresHacerlo::class.java)
-                return true
-            }
-            R.id.icEliminar ->{
-                abrirActividad(CalendarioView::class.java)
-                return true
-            }
-            else -> super.onContextItemSelected(item)
-        }
-    }
-
     override fun onCreateContextMenu(
         menu: ContextMenu?,
         v: View?,
@@ -104,10 +49,10 @@ class Inicio : AppCompatActivity() {
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
         posicionItem = id
-        idProf = adapter!!.getItem(posicionItem)!!.idHabito
+        Inicio.idProf = adapter!!.getItem(posicionItem)!!.Idtarea
     }
 
-     fun onContextItemSelected12(item: MenuItem): Boolean {
+    override fun onContextItemSelected(item: MenuItem): Boolean {
 
         var Aprofesor = adapter!!.getItem(posicionItem)
         return when(item?.itemId){
@@ -116,18 +61,18 @@ class Inicio : AppCompatActivity() {
             R.id.editar-> {
 
                 if (Aprofesor != null) {
-                    abrirActividadConParametros(CuandoQuieresHacerlo::class.java,Aprofesor) }
+                    abrirActividadConParametros(NuevaTarea::class.java,Aprofesor) }
                 return true }
 
             //Eliminar
             R.id.eliminar -> {
-                if(BaseDeDatos.TablaHabito!=null){
+                if(BaseDeDatos.TablaTarea!=null){
 
                     AlertDialog.Builder(this).apply {
                         setTitle("Alerta")
                         setMessage("¿Desea eliminar el registro?")
                         setPositiveButton("Si"){ _: DialogInterface, _: Int ->
-                            BaseDeDatos.TablaHabito!!.eliminarHabito(Aprofesor!!.idHabito)
+                            BaseDeDatos.TablaTarea!!.eliminarTarea(Aprofesor!!.Idtarea)
                             adapter?.remove(adapter!!.getItem(posicionItem));
                         }
                         setNegativeButton("No", null)
@@ -147,12 +92,12 @@ class Inicio : AppCompatActivity() {
         startActivity(intentExplicito)
     }
 
-    fun abrirActividadConParametros(clase: Class<*>, habito: HabitoBDD ){
+    fun abrirActividadConParametros(clase: Class<*>, Tarea: Tarea ){
         val intentExplicito = Intent(
             this,
             clase
         )
-        intentExplicito.putExtra("habito",habito)
+        intentExplicito.putExtra("Tarea", Tarea)
         startActivityForResult(intentExplicito,CODIGO_RESPUESTA_INTENT_EXPLICITO)
 
     }

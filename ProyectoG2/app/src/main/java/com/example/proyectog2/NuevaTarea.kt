@@ -11,6 +11,7 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.ButtonBarLayout
@@ -32,9 +33,7 @@ class NuevaTarea : AppCompatActivity() {
         prioridad=findViewById(R.id.btn_PrioridadTarea)
         prioridad .setOnClickListener{withItems()}
 
-
         botonHoraTarea. setOnClickListener {
-
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
@@ -49,8 +48,42 @@ class NuevaTarea : AppCompatActivity() {
                 true
             ).show()
         }
-    }
 
+        val Categoria= findViewById<TextView>(R.id.txtCat)
+        Categoria .setOnClickListener {
+            abrirActividad(CategoriasTarea::class.java)
+        }
+        val btnConfirmar = findViewById<Button>(R.id.btn_confirmarTarea)
+        btnConfirmar .setOnClickListener {
+            val categoriaTarea = CategoriasTarea.CategoriaTarea
+            val NombreTarea=findViewById<EditText>(R.id.editTextTextPersonName)
+            val nombreT = NombreTarea.text.toString()
+            val fechaT = fechaTarea.text.toString()
+            val horaTarea = botonHoraTarea.text.toString()
+            val PrioridadTarea = prioridad.text.toString()
+
+            if (nombreT.isEmpty() ||fechaT.isEmpty() || horaTarea.isEmpty() || PrioridadTarea.isEmpty() ) {
+                Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
+            } else {
+                val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(1,nombreT,categoriaTarea, fechaT,horaTarea, PrioridadTarea)
+
+                if (estado != null) {
+                    Log.i("añadir Tarea", "Datos: ${nombreT} --> ${fechaT} --> ${horaTarea}")
+
+                } else {
+                    Toast.makeText(this, "Datos no ingresados", Toast.LENGTH_LONG).show()
+
+                }
+            }
+            abrirActividad(MisTareas::class.java) }
+    }
+    fun abrirActividad(clase: Class<*>){
+        val intentExplicito = Intent(
+            this,
+            clase
+        )
+        startActivity(intentExplicito)
+    }
     fun ShowDatePickerDialog() {
         val datePicker = DateIckerFragment{ day, month, year -> OnDateSelected(day, month, year)}
         datePicker.show(supportFragmentManager, "datePcker")

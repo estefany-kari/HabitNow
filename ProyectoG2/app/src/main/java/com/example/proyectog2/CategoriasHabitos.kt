@@ -10,6 +10,9 @@ import android.widget.TextView
 import android.widget.Toast
 
 class CategoriasHabitos : AppCompatActivity() {
+    companion object{
+        var Categoria = ""
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -19,44 +22,52 @@ class CategoriasHabitos : AppCompatActivity() {
 
         val cat1 = findViewById<TextView>(R.id.txtDejarHabito)
         cat1 .setOnClickListener{
-            val categoria1 = cat1.text.toString()
-
-            if (categoria1.isEmpty()) {
-                Toast.makeText(this, "Selecciones una categoria", Toast.LENGTH_LONG).show()
-            } else {
-                val estado = BaseDeDatos.TablaHabito!!.crearHabitoCategoria(categoria1)
-
-                if (estado != null) {
-                    Log.i("añadir Estudiante", "CATEGORIA: ${categoria1}")
-                } else {
-                    Toast.makeText(this, "Categoria no agregada", Toast.LENGTH_LONG).show()
-
-                }
-            }
+            Categoria = cat1.text.toString()
             abrirActividad(frecuencia_habito::class.java)}
         val cat2 = findViewById<TextView>(R.id.Meditacion)
         cat2 .setOnClickListener{
+            Categoria = cat2.text.toString()
             abrirActividad(frecuencia_habito::class.java)}
         val cat3 = findViewById<TextView>(R.id.Estudio)
-        cat3 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat3 .setOnClickListener{
+            Categoria = cat3.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat4 = findViewById<TextView>(R.id.Deportes)
-        cat4 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat4 .setOnClickListener{
+            Categoria = cat4.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat5 = findViewById<TextView>(R.id.Entretenimiento)
-        cat5 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat5 .setOnClickListener{
+            Categoria = cat5.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat6 = findViewById<TextView>(R.id.Social)
-        cat6 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat6 .setOnClickListener{
+            Categoria = cat6.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat7 = findViewById<TextView>(R.id.Salud)
-        cat7 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat7 .setOnClickListener{
+            Categoria = cat7.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat8 = findViewById<TextView>(R.id.Nutricion)
-        cat8 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat8 .setOnClickListener{
+            Categoria = cat8.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat9 = findViewById<TextView>(R.id.Hogar)
-        cat9 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat9 .setOnClickListener{
+            Categoria = cat9.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat10 = findViewById<TextView>(R.id.Trabajo)
-        cat10 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat10 .setOnClickListener{
+            Categoria = cat10.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat11 = findViewById<TextView>(R.id.AireLibre)
-        cat11 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat11 .setOnClickListener{
+            Categoria = cat11.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
         val cat12 = findViewById<TextView>(R.id.Otros)
-        cat12 .setOnClickListener{abrirActividad(frecuencia_habito::class.java)}
+        cat12 .setOnClickListener{
+            Categoria = cat12.text.toString()
+            abrirActividad(frecuencia_habito::class.java)}
     }
 
     fun abrirActividad(clase: Class<*>){

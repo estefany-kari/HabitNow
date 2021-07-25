@@ -10,6 +10,10 @@ import android.widget.EditText
 import android.widget.Toast
 
 class DefinirHabito : AppCompatActivity() {
+    companion object{
+        var NombreHab =""
+        var DescHab =""
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -23,21 +27,8 @@ class DefinirHabito : AppCompatActivity() {
         btnAnterior .setOnClickListener { abrirActividad(CategoriasHabitos::class.java) }
         val btnSiguiente= findViewById<Button>(R.id.btn_confirmarCuando)
         btnSiguiente .setOnClickListener {
-            val nombre = nombreH.text.toString()
-            val desc = descripcionH.text.toString()
-
-            if (nombre.isEmpty() || desc.isEmpty()) {
-                Toast.makeText(this, "Selecciones una categoria", Toast.LENGTH_LONG).show()
-            } else {
-                val estado = BaseDeDatos.TablaHabito!!.crearNombreHabito(nombre,desc)
-
-                if (estado != null) {
-                    Log.i("añadir Estudiante", "CATEGORIA: ${nombre} --> ${desc}")
-                } else {
-                    Toast.makeText(this, "Categoria no agregada", Toast.LENGTH_LONG).show()
-
-                }
-            }
+            NombreHab = nombreH.text.toString()
+            DescHab = descripcionH.text.toString()
             abrirActividad(CuandoQuieresHacerlo::class.java) }
     }
 
