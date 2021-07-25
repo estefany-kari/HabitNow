@@ -7,6 +7,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     val datos = SQLiteHelper(this)
@@ -25,9 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         btnIngresarUsuario.setOnClickListener {
 
+            validarUsuario()
 
-
-            abrirActividad(NuevaTarea::class.java) }
+            }
     }
 
     fun abrirActividad(clase: Class<*>){
@@ -43,6 +44,14 @@ class MainActivity : AppCompatActivity() {
 
         BaseDeDatos.TablaUsuario = SQLiteHelper(this)
         val lista = datos.consultarUsuario(usuario.text.toString(), claveT.text.toString())
+        if(lista!=null){
+            abrirActividad(NuevaTarea::class.java)
+        }else{
+            Toast.makeText(this,"Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
+        }
+        usuario.setText("")
+        claveT.setText("")
+        usuario.findFocus()
         return true
     }
 
