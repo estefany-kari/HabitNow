@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+    val datos = SQLiteHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         val btnIngresarUsuario = findViewById<Button>(R.id.btn_ingresarUsuario)
 
 
-        btnIngresarUsuario.setOnClickListener { abrirActividad(NuevaTarea::class.java) }
+        btnIngresarUsuario.setOnClickListener {
+
+
+
+            abrirActividad(NuevaTarea::class.java) }
     }
 
     fun abrirActividad(clase: Class<*>){
@@ -31,4 +37,13 @@ class MainActivity : AppCompatActivity() {
         )
         startActivity(intentExplicito)
     }
+    fun validarUsuario():Boolean{
+        val usuario = findViewById<EditText>(R.id.edit_usuario)
+        val claveT = findViewById<EditText>(R.id.edit_contraseña)
+
+        BaseDeDatos.TablaUsuario = SQLiteHelper(this)
+        val lista = datos.consultarUsuario(usuario.text.toString(), claveT.text.toString())
+        return true
+    }
+
 }

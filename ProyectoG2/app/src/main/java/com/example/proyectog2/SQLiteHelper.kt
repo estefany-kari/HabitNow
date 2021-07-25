@@ -65,7 +65,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             )
             val existeUsuario = resultadoConsultaLectura.moveToFirst()
             //val arregloUsuario = arrayListOf<EUsuarioBDD>()       //En caso de3 necesitar un arreglo de registros
-            val usuarioEncontrado = UsuarioBDD(0,"","","","")
+            val usuarioEncontrado = UsuarioBDD(0,null,"","",null)
             if (existeUsuario){
                 do{
 
@@ -83,7 +83,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             baseDatosLectura.close()
             return usuarioEncontrado
         }
-    
+    //Funcion
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
