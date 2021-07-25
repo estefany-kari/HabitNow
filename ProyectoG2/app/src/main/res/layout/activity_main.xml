@@ -62,8 +62,6 @@
         android:errorEnable= "true"/>
 
     <Button
-
-
         android:id="@+id/btn_ingresarUsuario"
         android:layout_width="320dp"
         android:layout_height="52dp"

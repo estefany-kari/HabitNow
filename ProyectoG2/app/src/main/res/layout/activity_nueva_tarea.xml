@@ -86,17 +86,17 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="46dp"
-            android:layout_height="49dp"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:background="@color/white"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/ic_dialog_dialer" />
+            app:srcCompat="@android:drawable/ic_dialog_dialer"
+            app:tint="#000000" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Categoría"
@@ -107,7 +107,7 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Tarea"
@@ -117,11 +117,11 @@
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="46dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:background="@color/white"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/ic_menu_recent_history" />
+            app:srcCompat="@android:drawable/ic_menu_recent_history"
+            app:tint="#000000" />
     </LinearLayout>
 
     <LinearLayout
@@ -138,17 +138,17 @@
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="46dp"
-            android:layout_height="49dp"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:background="@color/white"
-            android:tint="#000000"
-            app:srcCompat="@drawable/ic_baseline_notifications_24" />
+            app:srcCompat="@drawable/ic_baseline_notifications_24"
+            app:tint="#000000" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Hora y recordatorios"
@@ -159,7 +159,7 @@
         <Button
             android:id="@+id/btn_HoraRecordatorio"
             android:layout_width="13dp"
-            android:layout_height="38dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:backgroundTint="#A9F1E5"
             android:drawableStart="@drawable/estilo_borde__circular"
@@ -184,17 +184,17 @@
 
         <ImageButton
             android:id="@+id/imageButton7"
-            android:layout_width="46dp"
-            android:layout_height="49dp"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:background="@color/white"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@android:drawable/stat_sys_upload"
+            app:tint="#000000" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Prioridad"
@@ -230,17 +230,17 @@
 
         <ImageButton
             android:id="@+id/imageButton3"
-            android:layout_width="46dp"
-            android:layout_height="49dp"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:background="@color/white"
-            android:tint="#000000"
-            app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
+            app:srcCompat="@drawable/ic_baseline_calendar_today_24"
+            app:tint="#000000" />
 
         <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtFechaTarea"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="Fecha"
@@ -251,7 +251,7 @@
         <EditText
             android:id="@+id/btn_fechaTarea"
             android:layout_width="79dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:background="@drawable/estilo_bordes"
             android:clickable="true"
             android:ems="10"
