@@ -17,7 +17,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             NOMBREUSUARIO VARCHAR(50),
             CONTRASENIA VARCHAR(16),
             FECHANACIMIENTO VARCHAR(15),
-            );
+            )
             """.trimIndent()
         Log.i("bdd", "Creacion tabla usuario")
         db?.execSQL(scriptCrearTablaUsuario)
@@ -32,7 +32,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             HORA VARCHAR(5),
             PRIORIDAD VARCHAR(15),
             FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO) 
-            );
+            )
             """.trimIndent()
         Log.i("bdd", "Creacion tabla Tarea")
         db?.execSQL(scriptCrearTablaTareas)
@@ -106,7 +106,9 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
                 valoresAGuardar
             )
         conexionEscritura.close()
+
         return if (resultadoEscritura.toInt() == -1) false else true
+
     }
 
 
