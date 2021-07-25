@@ -57,7 +57,7 @@ class Inicio : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-     fun onContextItemSelected1(item: MenuItem): Boolean {
+    override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item?.itemId) {
             //Editar
             R.id.icHoy -> {
@@ -76,6 +76,15 @@ class Inicio : AppCompatActivity() {
                 return true
             }
             R.id.IcCalendario ->{
+                abrirActividad(CalendarioView::class.java)
+                return true
+            }
+            R.id.icEditar ->{
+                    //abrirActividadConParametros(CuandoQuieresHacerlo::class.java)
+                return true
+            }
+            R.id.icEliminar ->{
+                abrirActividad(CalendarioView::class.java)
                 return true
             }
             else -> super.onContextItemSelected(item)
@@ -98,7 +107,7 @@ class Inicio : AppCompatActivity() {
         idProf = adapter!!.getItem(posicionItem)!!.idHabito
     }
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
+     fun onContextItemSelected12(item: MenuItem): Boolean {
 
         var Aprofesor = adapter!!.getItem(posicionItem)
         return when(item?.itemId){
