@@ -3,11 +3,9 @@ package com.example.proyectog2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.TextureView
 import android.view.Window
+import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 
 class CategoriasHabitos : AppCompatActivity() {
     companion object{
@@ -68,6 +66,11 @@ class CategoriasHabitos : AppCompatActivity() {
         cat12 .setOnClickListener{
             Categoria = cat12.text.toString()
             abrirActividad(frecuencia_habito::class.java)}
+
+        val btnCancelar = findViewById<Button>(R.id.btncancelarCategoria)
+        btnCancelar.setOnClickListener {
+            abrirActividad(Inicio::class.java)
+        }
     }
 
     fun abrirActividad(clase: Class<*>){

@@ -11,7 +11,7 @@
         android:layout_width="181dp"
         android:layout_height="47dp"
         android:layout_marginTop="40dp"
-        android:text="Registrarse"
+        android:text="REGISTRARSE"
         android:textColor="#00D9C4"
         android:textSize="30sp"
         android:textStyle="bold"

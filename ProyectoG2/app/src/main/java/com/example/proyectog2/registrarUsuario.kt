@@ -11,6 +11,9 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_registrar_usuario.*
 
 class registrarUsuario : AppCompatActivity() {
+    companion object{
+        var id_usuario =0
+    }
     private lateinit var fecha: EditText
     val datos = SQLiteHelper(this)
 

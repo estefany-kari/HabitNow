@@ -11,30 +11,36 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
+import kotlinx.android.synthetic.main.activity_mis_tareas.*
 
 class MisTareas : AppCompatActivity() {
     companion object{
-        var idProf = 0
+        var id_usuario = 0
     }
     private var calendario = false
 
     var posicionItem = 0
-    var adapter: ArrayAdapter<Tarea>? = null
+    var adapterTarea: ArrayAdapter<Tarea>? = null
     val CODIGO_RESPUESTA_INTENT_EXPLICITO = 401
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mis_tareas)
-        val actionBar = supportActionBar
-        actionBar!!.title = "New Title"
         BaseDeDatos.TablaTarea= SQLiteHelper(this)
 
+        val actionBar = supportActionBar
+        actionBar!!.title = "New Title"
+
         if(BaseDeDatos.TablaTarea != null) {
-            val profesor = BaseDeDatos.TablaTarea!!.consultarTarea()
-            adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, profesor)
+            val Tarea = BaseDeDatos.TablaTarea!!.consultarTarea()
+            adapterTarea = ArrayAdapter(this, android.R.layout.simple_list_item_1, Tarea)
             val listViewUsuario = findViewById<ListView>(R.id.lv_tareas)
-            listViewUsuario.adapter = adapter
+            listViewUsuario.adapter = adapterTarea
             registerForContextMenu(listViewUsuario)
         }
+        btn_agregarMisTareas.setOnClickListener{
+            var intent: Intent = Intent(this, NuevaTarea::class.java)
+            startActivity(intent)        }
+
     }
     override fun onCreateContextMenu(
         menu: ContextMenu?,
@@ -49,19 +55,19 @@ class MisTareas : AppCompatActivity() {
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
         posicionItem = id
-        Inicio.idProf = adapter!!.getItem(posicionItem)!!.Idtarea
+        id_usuario = adapterTarea!!.getItem(posicionItem)!!.Idtarea
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
 
-        var Aprofesor = adapter!!.getItem(posicionItem)
+        var ATarea = adapterTarea!!.getItem(posicionItem)
         return when(item?.itemId){
 
             //Editar
             R.id.editar-> {
 
-                if (Aprofesor != null) {
-                    abrirActividadConParametros(NuevaTarea::class.java,Aprofesor) }
+                if (ATarea != null) {
+                    abrirActividadConParametros(NuevaTarea::class.java,ATarea) }
                 return true }
 
             //Eliminar
@@ -72,8 +78,8 @@ class MisTareas : AppCompatActivity() {
                         setTitle("Alerta")
                         setMessage("¿Desea eliminar el registro?")
                         setPositiveButton("Si"){ _: DialogInterface, _: Int ->
-                            BaseDeDatos.TablaTarea!!.eliminarTarea(Aprofesor!!.Idtarea)
-                            adapter?.remove(adapter!!.getItem(posicionItem));
+                            BaseDeDatos.TablaTarea!!.eliminarTarea(ATarea!!.Idtarea)
+                            adapterTarea?.remove(adapterTarea!!.getItem(posicionItem));
                         }
                         setNegativeButton("No", null)
                     }.show()

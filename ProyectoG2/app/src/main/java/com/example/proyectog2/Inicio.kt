@@ -13,10 +13,12 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_inicio.*
 
 class Inicio : AppCompatActivity() {
     companion object{
         var idProf = 0
+
     }
     private var calendario = false
 
@@ -27,7 +29,7 @@ class Inicio : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
         val actionBar = supportActionBar
-        actionBar!!.title = "New Title"
+        actionBar!!.title = "G2"
         BaseDeDatos.TablaHabito= SQLiteHelper(this)
 
         if(BaseDeDatos.TablaHabito != null) {
@@ -37,6 +39,10 @@ class Inicio : AppCompatActivity() {
             listViewUsuario.adapter = adapter
             registerForContextMenu(listViewUsuario)
 
+        }
+        btn_agregar.setOnClickListener {
+            var intent: Intent = Intent(this, CategoriasHabitos::class.java)
+            startActivity(intent)
         }
     }
 

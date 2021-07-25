@@ -367,7 +367,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnAceptarTareas"
+        android:id="@+id/btncancelarCategoria"
         android:layout_width="161dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"

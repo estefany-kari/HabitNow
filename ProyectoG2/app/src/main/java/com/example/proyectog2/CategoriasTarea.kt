@@ -14,7 +14,7 @@ class CategoriasTarea : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categorias_tarea)
 
-        val btnCancelar = findViewById<Button>(R.id.btnAceptarTareas)
+        val btnCancelar = findViewById<Button>(R.id.btncancelarCategoria)
         btnCancelar .setOnClickListener { abrirActividad(NuevaTarea::class.java) }
         val cat1 = findViewById<TextView>(R.id.txtDejarHabito)
         cat1 .setOnClickListener{

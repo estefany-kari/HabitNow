@@ -8,10 +8,22 @@
 
     <ListView
         android:id="@+id/lv_tareas"
-        android:layout_width="390dp"
-        android:layout_height="582dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="391dp"
+        android:layout_height="503dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_agregarMisTareas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_tareas"
+        app:layout_constraintVertical_bias="0.386"
+        app:srcCompat="@android:drawable/ic_input_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>
