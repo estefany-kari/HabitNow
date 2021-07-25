@@ -108,7 +108,9 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
                 valoresAGuardar
             )
         conexionEscritura.close()
+
         return if (resultadoEscritura.toInt() == -1) false else true
+
     }
 
 
