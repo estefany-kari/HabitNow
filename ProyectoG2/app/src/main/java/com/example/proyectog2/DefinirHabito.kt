@@ -13,7 +13,7 @@ class DefinirHabito : AppCompatActivity() {
         getSupportActionBar()?.hide();
         setContentView(R.layout.activity_definir_habito)
         val btnAnterior= findViewById<Button>(R.id.btn_cancelarCuando)
-        btnAnterior .setOnClickListener { abrirActividad(DefinirHabito::class.java) }
+        btnAnterior .setOnClickListener { abrirActividad(CategoriasHabitos::class.java) }
         val btnSiguiente= findViewById<Button>(R.id.btn_confirmarCuando)
         btnSiguiente .setOnClickListener { abrirActividad(CuandoQuieresHacerlo::class.java) }
     }
