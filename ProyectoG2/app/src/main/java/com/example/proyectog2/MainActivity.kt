@@ -23,16 +23,15 @@ class MainActivity : AppCompatActivity() {
 
         val btnIngresarUsuario = findViewById<Button>(R.id.btn_ingresarUsuario)
 
-<<<<<<< HEAD
 
         btnIngresarUsuario.setOnClickListener {
 
             validarUsuario()
 
             }
-=======
+
         btnIngresarUsuario.setOnClickListener { abrirActividad(NuevaTarea::class.java) }
->>>>>>> proyecto
+
     }
 
     fun abrirActividad(clase: Class<*>){

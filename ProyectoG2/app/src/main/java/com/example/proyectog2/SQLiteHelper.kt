@@ -55,7 +55,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         Log.i("bdd", "Creacion tabla Habito")
         db?.execSQL(scriptCrearTablaHabitos)
     }
-<<<<<<< HEAD
+
     //Funcion para consultar el Usuario
         fun consultarUsuario(usuario:String, clave:String): UsuarioBDD{
             val scriptConsultarUsuario = "SELECT NOMBREUSUARIO, CONTRASEÑA FROM USUARIO WHERE NOMBREUSUARIO = ${usuario} AND CONTRASEÑA =${clave}"
@@ -85,7 +85,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             return usuarioEncontrado
         }
     //Funcion
-=======
+
     fun crearUsuarioFormulario(
         nombre: String,
         nombreUsuario: String,
@@ -108,7 +108,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         conexionEscritura.close()
         return if (resultadoEscritura.toInt() == -1) false else true
     }
->>>>>>> proyecto
+
 
     //crear tareas
 

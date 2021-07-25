@@ -1,5 +1,7 @@
 package com.example.proyectog2
 
+import android.app.TimePickerDialog
+import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
