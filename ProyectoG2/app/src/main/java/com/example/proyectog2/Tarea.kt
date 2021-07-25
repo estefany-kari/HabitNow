@@ -4,8 +4,8 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.util.*
 
-class Tarea (var Idtarea:Int, var Id_usuario:Int, var categoria: String?, var nombreTarea: String?, var prioridad:String?,
-             var fechaRecordatorio:String?, var horaRecordatorio:String?):Parcelable{
+class Tarea (var Idtarea:Int, var Id_usuario:Int, var categoria: String?, var nombreTarea: String?,
+             var fechaRecordatorio:String?, var horaRecordatorio:String?,var prioridad:String?):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readInt(),
@@ -22,9 +22,10 @@ class Tarea (var Idtarea:Int, var Id_usuario:Int, var categoria: String?, var no
         parcel.writeInt(Id_usuario)
         parcel.writeString(categoria)
         parcel.writeString(nombreTarea)
-        parcel.writeString(prioridad)
         parcel.writeString(fechaRecordatorio)
         parcel.writeString(horaRecordatorio)
+        parcel.writeString(prioridad)
+
     }
     override fun toString(): String {
         return "Tarea:  $nombreTarea \n" +

@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import java.util.ArrayList
 
-class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",null,1) {
+class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos",null,1) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         val scriptCrearTablaUsuario=
@@ -28,10 +28,10 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             CREATE TABLE TAREA(
             ID_TAREA INTEGER PRIMARY KEY AUTOINCREMENT,
             ID_USUARIO INTEGER,
-            CATEGORIA VARCHAR(20),
+            CATEGORIA VARCHAR(50),
             NOMBRE VARCHAR(50),
             FECHA VARCHAR(15),
-            HORA VARCHAR(5),
+            HORA VARCHAR(10),
             PRIORIDAD VARCHAR(15),
             FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO) 
             );
@@ -127,11 +127,12 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         val conexionEscritura = writableDatabase
         val valoresAGuardar = ContentValues()
         valoresAGuardar.put("id_usuario", idUsuario)
-        valoresAGuardar.put("nombre", NombreTarea)
         valoresAGuardar.put("categoria",categoria)
+        valoresAGuardar.put("nombre", NombreTarea)
         valoresAGuardar.put("fecha", FechaTarea)
         valoresAGuardar.put("hora", horaTarea)
         valoresAGuardar.put("prioridad", prioridad)
+
         val resultadoEscritura: Long = conexionEscritura
             .insert(
                 "TAREA",

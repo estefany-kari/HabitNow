@@ -14,7 +14,6 @@ import android.text.style.StyleSpan
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.ButtonBarLayout
 import java.util.*
 
 
@@ -26,12 +25,13 @@ class NuevaTarea : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nueva_tarea)
-        val botonHoraTarea = findViewById<Button>(R.id.btn_HoraRecordatorio)
+        val botonHoraTarea = findViewById<EditText>(R.id.btn_HoraRecordatorio)
         fechaTarea = findViewById<EditText>(R.id.btn_fechaTarea)
 
         fechaTarea.setOnClickListener{ShowDatePickerDialog()}
         prioridad=findViewById(R.id.btn_PrioridadTarea)
         prioridad .setOnClickListener{withItems()}
+        val NombreTarea=findViewById<EditText>(R.id.txtNombreTarea)
 
         botonHoraTarea. setOnClickListener {
             val cal = Calendar.getInstance()
@@ -56,16 +56,21 @@ class NuevaTarea : AppCompatActivity() {
         val btnConfirmar = findViewById<Button>(R.id.btn_confirmarTarea)
         btnConfirmar .setOnClickListener {
             val categoriaTarea = CategoriasTarea.CategoriaTarea
-            val NombreTarea=findViewById<EditText>(R.id.editTextTextPersonName)
+            println("$categoriaTarea")
             val nombreT = NombreTarea.text.toString()
+            println("$nombreT")
             val fechaT = fechaTarea.text.toString()
+            println("$fechaT")
             val horaTarea = botonHoraTarea.text.toString()
+            println("$horaTarea")
             val PrioridadTarea = prioridad.text.toString()
+            println("$PrioridadTarea")
 
             if (nombreT.isEmpty() ||fechaT.isEmpty() || horaTarea.isEmpty() || PrioridadTarea.isEmpty() ) {
                 Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
             } else {
-                val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(1,nombreT,categoriaTarea, fechaT,horaTarea, PrioridadTarea)
+                val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(3,categoriaTarea,nombreT, fechaT,
+                    horaTarea, PrioridadTarea)
 
                 if (estado != null) {
                     Log.i("añadir Tarea", "Datos: ${nombreT} --> ${fechaT} --> ${horaTarea}")
