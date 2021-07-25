@@ -89,7 +89,7 @@
         android:id="@+id/id_anterior"
         android:layout_width="168dp"
         android:layout_height="66dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="16dp"
         android:backgroundTint="#A9F1E5"
         android:drawableStart="@drawable/estilo_borde__circular"
         android:text="ANTERIOR"
@@ -97,14 +97,10 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_siguiente2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_siguiente2"
-        app:layout_constraintVertical_bias="0.0" />
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAlgunasVecesMes"
-        app:layout_constraintVertical_bias="0.909"
+        app:layout_constraintTop_toTopOf="@+id/btn_siguiente2"
+        app:layout_constraintVertical_bias="0.0"
 
         tools:ignore="MissingConstraints" />
 
