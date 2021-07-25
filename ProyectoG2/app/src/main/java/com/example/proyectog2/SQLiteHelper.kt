@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import java.util.ArrayList
 
-class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",null,1) {
+class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos",null,1) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         val scriptCrearTablaUsuario=
