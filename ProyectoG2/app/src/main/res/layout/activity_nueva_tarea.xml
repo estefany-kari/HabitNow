@@ -151,14 +151,14 @@
             android:layout_height="45dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Hora y recordatorios"
+            android:text="Recordatorio"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="normal" />
 
         <Button
             android:id="@+id/btn_HoraRecordatorio"
-            android:layout_width="13dp"
+            android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_weight="1"
             android:backgroundTint="#A9F1E5"
@@ -239,7 +239,7 @@
 
         <TextView
             android:id="@+id/txtFechaTarea"
-            android:layout_width="160dp"
+            android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_weight="1"
             android:gravity="center"
@@ -250,7 +250,7 @@
 
         <EditText
             android:id="@+id/btn_fechaTarea"
-            android:layout_width="79dp"
+            android:layout_width="150dp"
             android:layout_height="45dp"
             android:background="@drawable/estilo_bordes"
             android:clickable="true"
