@@ -69,8 +69,12 @@ class NuevaTarea : AppCompatActivity() {
             if (nombreT.isEmpty() ||fechaT.isEmpty() || horaTarea.isEmpty() || PrioridadTarea.isEmpty() ) {
                 Toast.makeText(this, "Llene todos los datos", Toast.LENGTH_LONG).show()
             } else {
+
+                val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(1,categoriaTarea, nombreT,fechaT,horaTarea, PrioridadTarea)
+
                 val estado = BaseDeDatos.TablaTarea!!.crearTareaFormulario(3,categoriaTarea,nombreT, fechaT,
                     horaTarea, PrioridadTarea)
+
 
                 if (estado != null) {
                     Log.i("añadir Tarea", "Datos: ${nombreT} --> ${fechaT} --> ${horaTarea}")
