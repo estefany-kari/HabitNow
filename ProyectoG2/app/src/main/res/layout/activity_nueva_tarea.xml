@@ -162,7 +162,10 @@
             android:layout_height="45dp"
             android:layout_weight="1"
             android:background="@drawable/estilo_bordes"
-            android:text="hh:mm" />
+            android:text="hh:mm"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center"/>
 
 
     </LinearLayout>

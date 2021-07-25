@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity() {
             }else{
                 validarUsuario()
              }
-
-
             }
 
         btnIngresarUsuario.setOnClickListener { abrirActividad(CategoriasHabitos::class.java) }
