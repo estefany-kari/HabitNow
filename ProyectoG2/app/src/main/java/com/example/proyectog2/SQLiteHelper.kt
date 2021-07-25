@@ -16,8 +16,8 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             NOMBRE VARCHAR(50),
             NOMBREUSUARIO VARCHAR(50),
             CONTRASENIA VARCHAR(16),
-            FECHANACIMIENTO VARCHAR(15),
-            )
+            FECHANACIMIENTO VARCHAR(15)
+            );
             """.trimIndent()
         Log.i("bdd", "Creacion tabla usuario")
         db?.execSQL(scriptCrearTablaUsuario)
@@ -26,13 +26,13 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             """
             CREATE TABLE TAREA(
             ID_TAREA INTEGER PRIMARY KEY AUTOINCREMENT,
-            ID_PROF INTEGER,
+            ID_USUARIO INTEGER,
             NOMBRE VARCHAR(50),
             FECHA INTEGER,
             HORA VARCHAR(5),
             PRIORIDAD VARCHAR(15),
             FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO) 
-            )
+            );
             """.trimIndent()
         Log.i("bdd", "Creacion tabla Tarea")
         db?.execSQL(scriptCrearTablaTareas)
@@ -46,7 +46,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             DESCRIPCION VARCHAR(50),
             FRECUENCIA VARCHAR(5),
             FECHAINICIO VARCHAR(15),
-            FECHAFIN VARCHAR(15)
+            FECHAFIN VARCHAR(15),
             HORA VARCHAR(5),
             PRIORIDAD VARCHAR(15),
             FOREIGN KEY(ID_USUARIO) REFERENCES USUARIO(ID_USUARIO) 

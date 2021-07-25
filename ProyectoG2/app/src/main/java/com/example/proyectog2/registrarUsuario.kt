@@ -39,18 +39,13 @@ class registrarUsuario : AppCompatActivity() {
     }
     fun agregarNuevoUsuario(){
 
-        val nombre= findViewById<EditText>(R.id.etNombre)
-        val editNombreUsuario = findViewById<EditText>(R.id.edi_nombreUsuario)
-        val fechaNac = findViewById<EditText>(R.id.txtFecha)
-        val clave1= findViewById<EditText>(R.id.editTextTextPassword)
-        val clave2= findViewById<EditText>(R.id.editTextTextPassword2)
+        val nombre= findViewById<EditText>(R.id.etNombre).toString()
+        val editNombreUsuario = findViewById<EditText>(R.id.edi_nombreUsuario).toString()
+        val fechaNac = findViewById<EditText>(R.id.txtFecha).toString()
+        val clave1= findViewById<EditText>(R.id.editTextTextPassword).toString()
 
-         nombre.text.toString()
-         editNombreUsuario.text.toString()
-         fechaNac.text.toString()
-         clave1.text.toString()
-         clave2.text.toString()
-        val listaUsuario = datos.crearUsuarioFormulario(nombre.toString(),editNombreUsuario.toString(),clave1.toString(), fechaNac.toString() )
+
+        val listaUsuario = datos.crearUsuarioFormulario(nombre,editNombreUsuario,clave1, fechaNac)
 
 
         if(listaUsuario != null){

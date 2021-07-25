@@ -86,12 +86,12 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:cornerRadius="30dp"/>
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAlgunasVecesMes"
-        app:layout_constraintVertical_bias="0.909" />
-        app:cornerRadius="30dp"
+        app:layout_constraintVertical_bias="0.909"
+
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
