@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-        btnIngresarUsuario.setOnClickListener { abrirActividad(Inicio::class.java) }
+        btnIngresarUsuario.setOnClickListener { abrirActividad(NuevaTarea::class.java) }
 
     }
 

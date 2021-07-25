@@ -28,6 +28,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             CREATE TABLE TAREA(
             ID_TAREA INTEGER PRIMARY KEY AUTOINCREMENT,
             ID_USUARIO INTEGER,
+            CATEGORIA VARCHAR(20),
             NOMBRE VARCHAR(50),
             FECHA VARCHAR(15),
             HORA VARCHAR(5),
@@ -117,6 +118,7 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
     //crear tareas
     fun crearTareaFormulario(
         idUsuario: Int,
+        categoria: String,
         NombreTarea: String,
         FechaTarea: String,
         horaTarea: String,
@@ -126,10 +128,10 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
         val valoresAGuardar = ContentValues()
         valoresAGuardar.put("id_usuario", idUsuario)
         valoresAGuardar.put("nombre", NombreTarea)
+        valoresAGuardar.put("categoria",categoria)
         valoresAGuardar.put("fecha", FechaTarea)
         valoresAGuardar.put("hora", horaTarea)
-        valoresAGuardar.put("prioridada", prioridad)
-
+        valoresAGuardar.put("prioridad", prioridad)
         val resultadoEscritura: Long = conexionEscritura
             .insert(
                 "TAREA",
@@ -138,6 +140,47 @@ class SQLiteHelper(context: Context?): SQLiteOpenHelper(context,"habitos.db",nul
             )
         conexionEscritura.close()
         return if (resultadoEscritura.toInt() == -1) false else true
+    }
+
+    fun consultarTarea(): ArrayList<Tarea> {
+        val scriptConsultaProfesor = "SELECT * FROM TAREA "
+        val baseDatosLectura = readableDatabase
+        val resultaConsultaLectura = baseDatosLectura.rawQuery(scriptConsultaProfesor, null)
+        val existeEstudiante = resultaConsultaLectura.moveToFirst()
+        val arregloEstudiante = arrayListOf<Tarea>()
+
+        if(existeEstudiante){
+            do{
+                val id = resultaConsultaLectura.getInt(0)
+                if(id!=null){
+                    arregloEstudiante.add(
+                        Tarea(id,1,
+                            resultaConsultaLectura.getString(2),
+                            resultaConsultaLectura.getString(3),
+                            resultaConsultaLectura.getString(4),
+                            resultaConsultaLectura.getString(5),
+                            resultaConsultaLectura.getString(6),
+
+                            )
+                    )
+                }
+            }while(resultaConsultaLectura.moveToNext())
+        }
+        resultaConsultaLectura.close()
+        baseDatosLectura.close()
+        return arregloEstudiante
+    }
+    fun eliminarTarea (id: Int): Boolean {
+
+        val conexionEscritura = writableDatabase
+        val resultadoEliminacion = conexionEscritura
+            .delete(
+                "TAREA",
+                "ID_TAREA=?",
+                arrayOf(id.toString())
+            )
+        conexionEscritura.close()
+        return if (resultadoEliminacion.toInt() == -1) false else true
     }
 
     //crear hábitos
