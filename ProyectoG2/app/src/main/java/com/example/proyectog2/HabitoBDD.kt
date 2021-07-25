@@ -3,11 +3,12 @@ package com.example.proyectog2
 import android.os.Parcel
 import android.os.Parcelable
 
-class HabitoBDD(var idHabito:Int,var nombreHabito:String?, var descripcion:String?,
+class HabitoBDD(var idHabito:Int, var categoria:String?, var nombreHabito:String?, var descripcion:String?,
                var frecuencia:String?, var fechaInicio:String?,
                var fechaFin:String?, var hora:String?, var prioridad:String?):Parcelable   {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -24,6 +25,7 @@ class HabitoBDD(var idHabito:Int,var nombreHabito:String?, var descripcion:Strin
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(idHabito)
+        parcel.writeString(categoria)
         parcel.writeString(nombreHabito)
         parcel.writeString(descripcion)
         parcel.writeString(frecuencia)
@@ -34,7 +36,7 @@ class HabitoBDD(var idHabito:Int,var nombreHabito:String?, var descripcion:Strin
 
     }
     override fun toString(): String {
-        return "Habito::  $nombreHabito \n" +
+        return "Habito:  $nombreHabito \n" +
                 " Habito \n"
     }
 

@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/etDefinirHabito"
         android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="45dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/etDescripcionHabito"
         android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
@@ -49,9 +49,9 @@
         android:gravity="center"
         android:text="Ej: Hacer ejercicio"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintEnd_toEndOf="@+id/etDefinirHabito"
+        app:layout_constraintStart_toStartOf="@+id/etDefinirHabito"
+        app:layout_constraintTop_toBottomOf="@+id/etDefinirHabito" />
 
     <Button
         android:id="@+id/btn_cancelarCuando"
@@ -67,7 +67,7 @@
         android:textStyle="bold"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editText3" />
+        app:layout_constraintStart_toStartOf="@+id/etDescripcionHabito" />
 
     <Button
         android:id="@+id/btn_confirmarCuando"
@@ -81,7 +81,7 @@
         android:textStyle="bold"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="@+id/etDescripcionHabito"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_cancelarCuando" />
 
